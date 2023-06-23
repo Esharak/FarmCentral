@@ -1,0 +1,7 @@
+﻿CREATE TABLE LoginFarm (
+ID INT NOT NULL PRIMARY KEY IDENTITY,
+Name VARCHAR (100) NOT NULL,
+Password VARCHAR (100) NOT NULL );
+
+INSERT INTO LoginFarm (Name, Password)
+VALUES ('Jane', 'Smith');

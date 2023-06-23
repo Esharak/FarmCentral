@@ -1,0 +1,49 @@
+﻿@page
+@model FarmCentral.Pages.Farmer.IndexModel
+@{
+}
+
+<br>
+<h2>List of Products</h2>
+
+<a class='btn btn-primary btn-sm' href='/Farmer/Create'>Add New Product</a>
+<table class="table">
+    <thread>
+
+        <tr>
+            <th>ID</th>
+            <th>PRODUCT NAME</th>
+            <th>PRODUCT DESCRIPTION</th>
+            <th>PRODUCT PRICE</th>
+            <th>PRODUCT QUANTITY</th>
+            <th>PRODUCT SUPPLIER/FARMER</th>
+            <th>SUPPLIER/FARMER PHONE</th>
+            <th>SUPPLIER/FARMER CELLPHONE</th>
+            <th>SUPPLIER/FARMER EMAIL</th>
+            <th>CREATED AT</th>
+            <th>ACTION</th>
+        </tr>
+    </thread>
+    <tbody>
+        @foreach (var item in Model.listProducts)
+        {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>@item.Price</td>
+            <td>@item.Quantity</td>
+            <td>@item.FarmerName</td>
+            <td>@item.FarmerPhone</td>
+            <td>@item.FarmerCell</td>
+            <td>@item.FarmerEmail</td>
+            <td>@item.Created_at</td>
+
+            <td>
+                <a class="btn btn-primary btn-sm" href="/Farmer/Edit?ID=@item.ID">Edit</a>
+                <a class="btn btn-danger btn-sm" href="/Farmer/Delete?ID=@item.ID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

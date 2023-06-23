@@ -1,0 +1,25 @@
+﻿@page
+@model FarmCentral.Pages.FarmerLogin.CreateModel
+@{
+}
+
+<div class="login-box">
+    <h2>Farmer Login</h2>
+    <form>
+        <div class="user-box">
+            <input type="text" class="form-control" name="Username" value="@Model.loginFarmInfo.Name">
+            <label>Username</label>
+        </div>
+        <div class="user-box">
+            <input type="password" class="form-control" name="password" value="@Model.loginFarmInfo.Password">
+            <label>Password</label>
+        </div>
+        <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <a class='btn btn-primary btn-sm' href='/Farmer/Index'>Submit</a>
+        </a>
+    </form>
+</div>

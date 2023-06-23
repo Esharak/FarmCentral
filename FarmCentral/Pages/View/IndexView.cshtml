@@ -1,0 +1,52 @@
+﻿@page
+@model FarmCentral.Pages.View.IndexViewModel
+@{
+}
+
+<br>
+<h2>List of Products</h2>
+<div class="user-box">
+    <label>FROM DATE:</label>
+    <input type="text" class="form-control" name="Filter">
+    <label>TO DATE:</label>
+    <input type="text" class="form-control" name="Filter">
+    <a class='btn btn-primary btn-sm' href=''>SEARCH</a>
+
+</div>
+<table class="table">
+    <thread>
+
+        <tr>
+            <th>ID</th>
+            <th>PRODUCT NAME</th>
+            <th>PRODUCT DESCRIPTION</th>
+            <th>PRODUCT PRICE</th>
+            <th>PRODUCT QUANTITY</th>
+            <th>PRODUCT SUPPLIER/FARMER</th>
+            <th>SUPPLIER/FARMER PHONE</th>
+            <th>SUPPLIER/FARMER CELLPHONE</th>
+            <th>SUPPLIER/FARMER EMAIL</th>
+            <th>CREATED AT</th>
+
+        </tr>
+    </thread>
+    <tbody>
+        @foreach (var item in Model.listProducts)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.Price</td>
+                <td>@item.Quantity</td>
+                <td>@item.FarmerName</td>
+                <td>@item.FarmerPhone</td>
+                <td>@item.FarmerCell</td>
+                <td>@item.FarmerEmail</td>
+                <td>@item.Created_at</td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>

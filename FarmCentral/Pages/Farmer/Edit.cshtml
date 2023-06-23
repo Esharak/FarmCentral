@@ -1,0 +1,88 @@
+﻿@page
+@model FarmCentral.Pages.Farmer.EditModel
+@{
+}
+
+<br>
+<h2>Edit  Product </h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+}
+
+<form method="POST">
+    <input type="hidden" name="ID" value="@Model.productInfo.ID">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Product Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Name" value="@Model.productInfo.Name">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Product Description</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Description" value="@Model.productInfo.Description">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Product Price</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Price" value="@Model.productInfo.Price">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Product Quantity</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Quantity" value="@Model.productInfo.Quantity">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Product Supplier/Farmer</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="FarmerName" value="@Model.productInfo.FarmerName">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Supplier/Farmer Phone</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="FarmerPhone" value="@Model.productInfo.FarmerPhone">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Supplier/Farmer Cellphone</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="FarmerCell" value="@Model.productInfo.FarmerCell">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Supplier/Farmer Email</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="FarmerEmail" value="@Model.productInfo.FarmerEmail">
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>@Model.successMessage</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+        </div>
+    </div>
+</form>

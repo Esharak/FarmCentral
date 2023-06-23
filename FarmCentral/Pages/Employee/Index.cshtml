@@ -1,0 +1,47 @@
+﻿@page
+@model FarmCentral.Pages.Employee.IndexModel
+@{
+}
+
+<br>
+<h2>List of Farmers</h2>
+<a class='btn btn-primary btn-sm' href='/Employee/Create'>Add New Farmer</a>
+<a class='btn btn-primary btn-sm' href='/View/IndexView'>View Farmer Products</a>
+<table class="table">
+    <thread>
+
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>SURNAME</th>
+            <th>TRADING NAME</th>
+            <th>ADDRESS</th>
+            <th>PHONE</th>
+            <th>CELLPHONE</th>
+            <th>EMAIL</th>
+            <th>CREATED AT</th>
+            <th>ACTION</th>
+        </tr>
+    </thread>
+    <tbody>
+        @foreach(var item in Model.listFarmers)
+            {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Name</td>
+            <td>@item.Surname</td>
+            <td>@item.TradingName</td>
+            <td>@item.Address</td>
+            <td>@item.Phone</td>
+            <td>@item.Cellphone</td>
+            <td>@item.Email</td>
+            <td>@item.Created_at</td>
+
+            <td>
+                <a class="btn btn-primary btn-sm" href="/Employee/Edit?ID=@item.ID">Edit</a>
+                <a class="btn btn-danger btn-sm" href="/Employee/Delete?ID=@item.ID">Delete</a>
+            </td>
+        </tr>
+            }
+    </tbody>
+</table>
